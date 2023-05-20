@@ -1,0 +1,33 @@
+body {
+    background-color: aquamarine;
+}
+
+#nav{
+
+}
+
+#search {
+
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-row: auto;
+}
+
+.card-header {
+    border: solid;
+    background-color: #fdfd96;
+    text-align: center;
+    align-self: center;
+    margin: 1rem;
+}
+
+#box {
+    border: dotted;
+    background-color: #fdfd96;
+    margin: 1rem;
+
+}
