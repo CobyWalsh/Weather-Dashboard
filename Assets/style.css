@@ -1,57 +1,66 @@
 body {
-    background-color: aquamarine;
+    background-color: #a3aabf;
 }
 
 h1 {
     text-align: end;
-    margin-top: 5rem;
-    margin-right: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    height: 80px;
+    background-color: #0d0b58;
+    color: #a3aabf;
+    font-size: 50px;
 
 }
 
 .city {
-   float: left;
-   color: black;
+    float: left;
+    color: black;
+    text-align: center;
 }
 
 h2 {
+    margin-top: 20px;
+    margin-right: 100px;
+    padding-top: 50px;
     text-align: center;
+    color: #0f2767;
+
 }
 
 #current-weather {
     float: right;
     border: solid;
-    background-color: #fdfd96;
+    background-color: #0f2767;
+    color: lightgrey;
     height: 200px;
     margin-right: 75px;
-}
-
-#nav{
-
-
-}
-
-#search {
-
 }
 
 .container {
     display: flex;
     justify-content: center;
     grid-row: auto;
+    float: right;
+    margin-top: 2rem;
+    margin-right: 4rem;
+    height: 300px;
+    color: lightgray;
 }
 
 .card-header {
     border: solid;
-    background-color: #fdfd96;
+    background-color: #0f2767;
+    color: lightgray;
     text-align: center;
     align-self: center;
-    margin: 1rem;
+    margin: 10px;
+    margin-top: 5px;
 }
 
 #box {
-    border: dotted;
-    background-color: #fdfd96;
-    margin: 1rem;
-
+    border: solid;
+    background-color: #0f2767;
+    color: lightgray;
+    margin-right: 2rem;
 }

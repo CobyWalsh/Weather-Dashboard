@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./Assets/style.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3/css/bootstrap.min.css">
   <title>Weather Dashboard</title>
 </head>
 
@@ -16,17 +16,17 @@
 
 <body>
   <div class="city">
-    <h2>Search for a City</h2>
+    <h2>Search for a City:</h2>
   </div>
 
   <div id="current-weather" class="card" style="width: 60rem;">
     <div class="card-header">
-     Current Weather
+      Current Date Weather
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
+      <li class="list-group-item">Temp:</li>
+      <li class="list-group-item">Wind:</li>
+      <li class="list-group-item">Humidity:</li>
     </ul>
   </div>
 
@@ -34,61 +34,59 @@
     <div class="container-fluid">
       <form class="d-flex" role="search">
         <input id="searchweather" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button id="search" class="btn btn-outline-success" type="submit">Search</button>
+        <button id="search" class="btn btn-outline-success">Search</button>
       </form>
     </div>
   </nav>
 
-  <h2>5-Day Forcast</h2>
-
+  <h2>5-Day Forcast:</h2>
   <div class="container">
-    <div class="card" style="width: 18rem;">
-  <div id="box" class="card" style="width: 18rem;">
-    <div class="card-header">
-      Featured
+    <div id="box" class="card" style="width: 13rem;">
+      <div class="card-header">
+        Date
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temp:</li>
+        <li class="list-group-item">Wind:</li>
+        <li class="list-group-item">Humidity:</li>
+      </ul>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-    </ul>
-  </div>
 
-  <div id="box" class="card" style="width: 18rem;">
-    <div class="card-header">
-      Featured
+    <div id="box" class="card" style="width: 13rem;">
+      <div class="card-header">
+        Date
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temp:</li>
+        <li class="list-group-item">Wind:</li>
+        <li class="list-group-item">Hunidity:</li>
+      </ul>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-    </ul>
-  </div>
 
-  <div id="box" class="card" style="width: 18rem;">
-    <div class="card-header">
-      Featured
+    <div id="box" class="card" style="width: 13rem;">
+      <div class="card-header">
+        Date
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temp:</li>
+        <li class="list-group-item">Wind:</li>
+        <li class="list-group-item">Humidity:</li>
+      </ul>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-    </ul>
-  </div>
 
-  <div id="box" class="card" style="width: 18rem;">
-    <div class="card-header">
-      Featured
+    <div id="box" class="card" style="width: 13rem;">
+      <div class="card-header">
+        Date
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temp:</li>
+        <li class="list-group-item">Wind:</li>
+        <li class="list-group-item">Humidity:</li>
+      </ul>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-    </ul>
-  </div>
 
-  <script src="./Assets/script.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3/js/bootstrap.min.js"></script>
+    <script src="./Assets/script.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3/js/bootstrap.min.js"></script>-->
 </body>
 
 </html>
