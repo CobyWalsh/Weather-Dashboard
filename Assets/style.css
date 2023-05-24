@@ -48,6 +48,11 @@ h2 {
     color: lightgray;
 }
 
+.icon-span-styling {
+    width: 25px;
+    height: auto;
+}
+
 .card-header {
     border: solid;
     background-color: #0f2767;

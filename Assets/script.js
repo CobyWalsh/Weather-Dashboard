@@ -1,15 +1,17 @@
 const savedWeather = handleLocalStorage("weather");
 const apiKey = "93d36d5ed8f49e95ac5c409eb3d39964"
-const queryUrl = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={93d36d5ed8f49e95ac5c409eb3d39964}'
-
-
+const queryUrl = 'https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={93d36d5ed8f49e95ac5c409eb3d39964}'
+var currWind = document.getElementById("wind");
+var currTemp = document.getElementById("temp");
+var currHumidity = document.getElementById("humidity");
+var currWeatherList = document.getElementById("currentWeatherList");
 
 function handleSearch(event) {
     event.preventDefault()
     const searchWeather = document.getElementById("searchweather").value
     handleLocalStorage("searchweather", "set")
     // call function on form submit
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchWeather}&appid=${apiKey}`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchWeather}&units=imperial&appid=${apiKey}`)
         // return response .json
         .then(function (response) {
             return response.json()
@@ -17,11 +19,22 @@ function handleSearch(event) {
         })
         .then(function (data) {
             console.log(data);
-            localStorage.setItem("searchWeather", data);
+            const iconImg = document.createElement('img');
+            iconImg.setAttribute('class', 'icon-span-styling');
+            iconImg.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`);
+            currWeatherList.append(iconImg);
+            currWind.textContent = "Wind: " + data.wind.speed + " m/h";
+
+            // nest the next fetch inside here
+
+            //localStorage.setItem("searchWeather", data);
+            //document.getElementById("searchweather").innerHTML
+
             // dynamically create elements with data and display on page 
             // set into local storage
             // display data on webpage
         })
+        
 }
 
 function handleLocalStorage(searchKey, type) {
