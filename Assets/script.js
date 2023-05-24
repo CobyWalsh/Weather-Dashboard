@@ -24,7 +24,8 @@ function handleSearch(event) {
             iconImg.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`);
             currWeatherList.append(iconImg);
             currWind.textContent = "Wind: " + data.wind.speed + " m/h";
-
+            currTemp.textContent = "Temp: " + data.main.temp + " F";
+            currHumidity.textContent = "Humidity " + data.main.humidity + "%";
             // nest the next fetch inside here
 
             //localStorage.setItem("searchWeather", data);
