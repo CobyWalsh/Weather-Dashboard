@@ -18,58 +18,59 @@ function handleSearch(event) {
         // return response .json
         .then(function (response) {
             return response.json()
+        }
+        )
+}
+     .then(function (data) {
+    console.log(data);
+    const iconImg = document.createElement('img');
+    iconImg.setAttribute('class', 'icon-span-styling');
+    iconImg.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`);
+    currWeatherList.append(iconImg);
+    currWind.textContent = "Wind: " + data.wind.speed + " m/h";
+    currTemp.textContent = "Temp: " + data.main.temp + " F";
+    currHumidity.textContent = "Humidity " + data.main.humidity + "%";
+    // nest the next fetch inside here
 
-        })
+    //localStorage.setItem("searchWeather", data);
+    //document.getElementById("searchweather").innerHTML
+
+    // dynamically create elements with data and display on page 
+    // set into local storage
+    // display data on webpage
+})
+
+function handleSearch(event) {
+    event.preventDefault()
+    const searchWeather = document.getElementById("searchweather").value
+    handleLocalStorage("searchweather", "set")
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=${searchWeather}lat={lat}&lon={lon}&units=imperial&appid=${apiKey}');
+
+    .then(function (response) {
+        return response.json
+
+    })
         .then(function (data) {
             console.log(data);
             const iconImg = document.createElement('img');
             iconImg.setAttribute('class', 'icon-span-styling');
             iconImg.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`);
-            currWeatherList.append(iconImg);
-            currWind.textContent = "Wind: " + data.wind.speed + " m/h";
-            currTemp.textContent = "Temp: " + data.main.temp + " F";
-            currHumidity.textContent = "Humidity " + data.main.humidity + "%";
-            // nest the next fetch inside here
-
-            //localStorage.setItem("searchWeather", data);
-            //document.getElementById("searchweather").innerHTML
-
-            // dynamically create elements with data and display on page 
-            // set into local storage
-            // display data on webpage
+            futureWeatherList.append(iconImg);
+            futureWind.textContent = "Wind: " + data.wind.speed + " m/h";
+            futureTemp.textContent = "Temp: " + data.main.temp + " F";
+            futureHumidity.textContent = "Humidity " + data.main.humidity + "%";
         })
-        
 }
-
-function handleSearch(event) {
-    event.preventDefault()
-    const searchWeather = document.getElementById("searchweather").value
-    handleLocalStorage("searchweather", "set")   
-            fetch('https://api.openweathermap.org/data/2.5/forecast?q=${searchWeather}lat={lat}&lon={lon}&units=imperial&appid=${apiKey}');
-            then(function(response) {
-                return response.json
-            })
-            .then(function (data) {
-                console.log(data);
-                const iconImg = document.createElement('img');
-                iconImg.setAttribute('class', 'icon-span-styling');
-                iconImg.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`);
-                futureWeatherList.append(iconImg);
-                futureWind.textContent = "Wind: " + data.wind.speed + " m/h";
-                futureTemp.textContent = "Temp: " + data.main.temp + " F";
-                futureHumidity.textContent = "Humidity " + data.main.humidity + "%";
-            })
-        }       
 function handleLocalStorage(searchKey, type) {
     var searches = []
-    
+
     if (type === "get") {
-        
+
         searches = localStorage.getItem("searches");
-      //  write code to add searches to the resent search section
-    } else if (type === "set") { 
+        //  write code to add searches to the resent search section
+    } else if (type === "set") {
         searches.push(searchKey)
-        
+
         localStorage.setItem("searches", searches);
         handleLocalStorage("", "get")
     }
