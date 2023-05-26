@@ -1,3 +1,4 @@
+/* added a background color of #a3aabf the my webpage */
 body {
     background-color: #a3aabf;
 }
@@ -12,7 +13,7 @@ h1 {
     font-size: 50px;
 
 }
-
+/* I floated the city class to the left with a text color of black and center aligned the text */
 .city {
     float: left;
     color: black;
@@ -27,7 +28,7 @@ h2 {
     color: #0f2767;
 
 }
-
+/* for the current-weather id I floated it to the right with a solid border, background color of #0f2767, text color of lightgrey, a height of 200px and right margin of 75px */
 #current-weather {
     float: right;
     border: solid;
@@ -36,7 +37,7 @@ h2 {
     height: 200px;
     margin-right: 75px;
 }
-
+/* for the container class I set the display to flex, justified the content to the center, floated the container to the right with a top margin of 2rem and right margin of 4rem with text color of lightgrey */
 .container {
     display: flex;
     justify-content: center;
@@ -52,7 +53,7 @@ h2 {
     width: 25px;
     height: auto;
 }
-
+/* I set the card-header class with a solid border background color of #0f2767, tet color of light grey, set the text and self align to center and margin of 10px with a top margin of 5px  */
 .card-header {
     border: solid;
     background-color: #0f2767;

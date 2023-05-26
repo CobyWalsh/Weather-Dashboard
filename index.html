@@ -5,7 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- linked my css file here -->
   <link rel="stylesheet" href="./Assets/style.css" />
+  <!-- linked bootstrap here -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3/css/bootstrap.min.css">
   <title>Weather Dashboard</title>
 </head>
@@ -21,18 +23,19 @@
   <div class="city">
     <h2>Search for a City:</h2>
   </div>
-
+<!-- addded my current weather card here -->
   <div id="current-weather" class="card" style="width: 60rem;">
     <div class="card-header">
       Current Date Weather
     </div>
+    <!-- this the framework where the current weather will be displayed -->
     <ul id="currentWeatherList" class="list-group list-group-flush">
       <li id="temp" class="list-group-item">Temp:</li>
       <li id="wind" class="list-group-item">Wind:</li>
       <li id="humidity" class="list-group-item">Humidity:</li>
     </ul>
   </div>
-
+<!-- added my nav bar here with a search button -->
   <nav id="nav" class="navbar bg-body-tertiary">
     <div class="container-fluid">
       <form class="d-flex" role="search">
@@ -44,52 +47,10 @@
 
   <h2>5-Day Forcast:</h2>
   <div class="container" id="container">
-    <!-- <div id="box" class="card" style="width: 13rem;">
-      <div class="card-header">
-        Date
-      </div>
-      <ul id="futureWeatherList1">
-        <li id="temp1">Temp:</li>
-        <li id="wind1">Wind:</li>
-        <li id="humidity1">Humidity:</li>
-      </ul>
     </div>
-
-    <div id="box" class="card" style="width: 13rem;">
-      <div class="card-header">
-        Date
-      </div>
-      <ul id="futureWeatherList2">
-        <li id="temp2">Temp:</li>
-        <li id="wind2">Wind:</li>
-        <li id="humidity2">Hunidity:</li>
-      </ul>
-    </div>
-
-    <div id="box" class="card" style="width: 13rem;">
-      <div class="card-header">
-        Date
-      </div>
-      <ul id="futureWeatherList3">
-        <li id="temp3">Temp:</li>
-        <li id="wind3">Wind:</li>
-        <li id="humidity3">Humidity:</li>
-      </ul>
-    </div>
-
-    <div id="box" class="card" style="width: 13rem;">
-      <div class="card-header">
-        Date
-      </div>
-      <ul id="futureWeatherList4">
-        <li id="temp4">Temp:</li>
-        <li id="wind4">Wind:</li>
-        <li id="humidity4">Humidity:</li>
-      </ul> -->
-    </div>
-
+<!--linked my JavaScript file here -->
     <script src="./Assets/script.js"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3/js/bootstrap.min.js"></script>-->
+  
 </body>
 
 </html>
