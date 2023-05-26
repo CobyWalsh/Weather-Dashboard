@@ -44,7 +44,7 @@ function handleSearch(event) {
                     for (let i = 0; i < data.list.length; i=i+8) {
                         //created a currentDate element and assigned it to a list property
                      var currentDate = data.list[i]
-                     //
+                     //appends a dynamically generated html snippet to the dateHtml card elements with the date, temperature, wind and humidity.
                      dateHtml +=`<div id="box" class="card" style="width: 13rem;">
                         <div class="card-header">
                           Date ${currentDate.dt_txt}
@@ -57,7 +57,7 @@ function handleSearch(event) {
                       </div>`
                   
                       }
-                      //
+                      // html code stored in dateHtml will be inserted as the content of the containerElement and will display on the webpage
                       containerElement.innerHTML=dateHtml
                 });
         });
