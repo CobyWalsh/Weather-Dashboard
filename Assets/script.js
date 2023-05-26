@@ -1,9 +1,10 @@
+// created const and var block to use in code
 const savedWeather = handleLocalStorage("weather");
 const apiKey = "93d36d5ed8f49e95ac5c409eb3d39964"
 var futureWeatherList = document.getElementById("futureWeatherList");
-var futureWind = document.getElementsByClassName("futureWind");
-var futureTemp = document.getElementsByClassName("futureTemp");
-var futureHumidity = document.getElementsByClassName("futureHumidity");
+var futureWind1 = document.getElementById("wind1");
+var futureTemp1 = document.getElementById("temp1");
+var futureHumidity1 = document.getElementById("humidity1");
 var currWind = document.getElementById("wind");
 var currTemp = document.getElementById("temp");
 var currHumidity = document.getElementById("humidity");
@@ -29,19 +30,35 @@ function handleSearch(event) {
             currTemp.textContent = "Temp: " + data.main.temp + " F";
             currHumidity.textContent = "Humidity " + data.main.humidity + "%";
 
-            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchWeather}lat={lat}&lon={lon}&units=imperial&appid=${apiKey}`)
+            fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${searchWeather}&{city name},{state code},{country code}&lat={lat}&lon={lon}&units=imperial&appid=${apiKey}`)
             .then(function (response) {
                 return response.json();
                 })
                 .then(function (data) {
                     console.log(data);
-                    const iconImg = document.createElement('img');
-                    iconImg.setAttribute('class', 'icon-span-styling');
-                    iconImg.setAttribute('src', `https://openweathermap.org/img/wn/${data.weather[0]["icon"]}@2x.png`);
-                    futureWeatherList.append(iconImg);
-                    futureWind.textContent = "Wind: " + data.wind.speed + " m/h";
-                    futureTemp.textContent = "Temp: " + data.main.temp + " F";
-                    futureHumidity.textContent = "Humidity " + data.main.humidity + "%";
+                    // this line of code selects the id container from my HTML code
+                  var containerElement = document.getElementById("container")
+                  // this line of code creates a var dateHtml with an empty string to concatenate current date and weather
+                    var dateHtml = ""
+            
+                    for (let i = 0; i < data.list.length; i=i+8) {
+                        //created a currentDate element and assigned it to a list property
+                     var currentDate = data.list[i]
+                     //
+                     dateHtml +=`<div id="box" class="card" style="width: 13rem;">
+                        <div class="card-header">
+                          Date ${currentDate.dt_txt}
+                        </div>
+                        <ul id="futureWeatherList3">
+                          <li id="temp3">Temp: ${currentDate.main.temp}</li>
+                          <li id="wind3">Wind: ${currentDate.wind.speed}</li>
+                          <li id="humidity3">Humidity: ${currentDate.main.humidity}</li>
+                        </ul>
+                      </div>`
+                  
+                      }
+                      //
+                      containerElement.innerHTML=dateHtml
                 });
         });
 }
